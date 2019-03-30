@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+2 <beans xmlns="http://www.springframework.org/schema/beans" 
+3 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+4 	xmlns:context="http://www.springframework.org/schema/context" 
+5 	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+6         http://www.springframework.org/schema/beans/spring-beans.xsd 
+7         http://www.springframework.org/schema/context 
+8         http://www.springframework.org/schema/context/spring-context.xsd"> 
+9 
+ 
+10 	<bean id="memberDao" class="org.Ermas.book.chap03.MemberDao" /> 
+11 
+ 
+12 	<!-- dependency injection by constructor --> 
+13 	<!--  
+14 	<bean id="memberRegisterService" 
+15 		class="org.mingi.jdbc.chap03.MemberRegisterService"> 
+16 		<constructor-arg ref="memberDao" /> 
+17 	</bean> 
+18 	--> 
+19 	<!-- dependency injection by setter --> 
+20 	 
+21 	<bean id="memberRegisterService" 
+22 		class="org.Ermas.book.chap03.MemberRegisterService"> 
+23 		<property name="memberDao" ref="memberDao"/> 
+24 	</bean> 
+25 	 
+26 </beans> 
