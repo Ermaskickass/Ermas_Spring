@@ -1,13 +1,18 @@
 package org.Ermas.book.chap03;
 
-public class MemberDao {
+import java.util.HashMap;
+import java.util.Map;
 
-	public MemberDao() {
-		System.out.println("memberDao instance created.");
+public class MemberDao {
+	Map<String, Member> map = new HashMap<>();
+
+	public Member selectByEmail(String email) {
+		return map.get(email);
 	}
+
 	
-	public void getMember() {
-		System.out.println("getMember() is executed.");
+	public void insert(Member member) {
+		map.put(member.getEmail(), member);
 	}
 	
 }

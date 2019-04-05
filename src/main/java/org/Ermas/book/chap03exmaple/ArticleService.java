@@ -1,4 +1,4 @@
-package org.Ermas.book.chap03;
+package org.Ermas.book.chap03exmaple;
 
 public class ArticleService {
 	

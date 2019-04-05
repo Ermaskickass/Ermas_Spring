@@ -7,14 +7,20 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
 
-	<bean id="greeter" class="org.Ermas.jdbc.spring.Greeter" />
-	
-	<bean id="memberDao" class="org.Ermas.book.chap03exmaple.MemberDao" />
-	<bean id="articleService" class="org.Ermas.book.chap03exmaple.ArticleService" >
-		<property name="memberDao" ref="memberDao" />
+	<bean id="memberDao" class="org.Ermas.book.chap03.MemberDao" />
+
+	<!-- dependency injection by constructor -->
+	<!-- 
+	<bean id="memberRegisterService"
+		class="org.Ermas.book.chap03.MemberRegisterService">
+		<constructor-arg ref="memberDao" />
 	</bean>
-	<bean id="memberService" class="org.Ermas.book.chap03exmaple.MemberService" >
+	-->
+	<!-- dependency injection by setter -->
+	
+	<bean id="memberRegisterService"
+		class="org.Ermas.book.chap03.MemberRegisterService">
 		<property name="memberDao" ref="memberDao"/>
 	</bean>
-
+	
 </beans>
